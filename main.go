@@ -37,11 +37,11 @@ func main() {
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
-		fmt.Println(link + " deve estar offline.")
+		fmt.Println(link + "deve estar inacessível.")
 		c <- link
 		return
 	}
 
-	fmt.Println(link, " está online!")
+	fmt.Println(link, "está online!")
 	c <- link
 }
